@@ -17,6 +17,6 @@ class Api::V1::CabinetsController < ApplicationController
   private
 
   def cabinet_params
-    params.require(:cabinet).permit(:name, :image)
+    params.require(:cabinet).permit(:name, :image, :first_name, :last_name, :email, :username, :password)
   end
 end

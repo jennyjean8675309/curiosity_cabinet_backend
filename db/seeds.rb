@@ -12,9 +12,13 @@ Item.destroy_all
 # Cabinets (name, image, user_id)
 15.times do
   Cabinet.create(
-    name: Faker::Name.first_name,
+    name: Faker::Hipster.word,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arolsen_Klebeband_09_231_1.jpg/405px-Arolsen_Klebeband_09_231_1.jpg',
-    user_id: Faker::Number.between(1, 15)
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    username: Faker::Internet.username,
+    password: Faker::Internet.password(8)
   )
 end
 
