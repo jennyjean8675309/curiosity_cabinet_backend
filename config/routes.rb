@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :cabinets, only: [:index, :create, :show]
       resources :items, only: [:index, :create, :show, :update, :destroy]
       resources :item_types, only: [:index, :create]
+      post '/login', to: 'auth#create'
+      get '/profile', to: 'cabinets#profile'
     end
   end
 end

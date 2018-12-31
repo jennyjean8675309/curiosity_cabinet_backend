@@ -10,6 +10,16 @@ ItemType.destroy_all
 Item.destroy_all
 
 # Cabinets (name, image, user_id)
+Cabinet.create(
+  name: "Jenny's Stuff",
+  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arolsen_Klebeband_09_231_1.jpg/405px-Arolsen_Klebeband_09_231_1.jpg',
+  first_name: 'Jenny',
+  last_name: 'Ingram',
+  email: 'jenny@gmail.com',
+  username: 'jennyjean',
+  password: 'blahblah'
+)
+
 15.times do
   Cabinet.create(
     name: Faker::Hipster.word,
