@@ -2,7 +2,7 @@ require 'byebug'
 
 class Api::V1::AuthController < ApplicationController
   def create #POST /api/v1/login
-    @user = Cabinet.find_by(username: params[:username])
+    @user = User.find_by(username: params[:username])
     if (@user && @user.authenticate(params[:password]))
       render json: {
         message: 'Correct username and password combination',
