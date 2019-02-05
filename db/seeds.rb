@@ -5,30 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Cabinet.destroy_all
+User.destroy_all
 ItemType.destroy_all
 Item.destroy_all
 
 # Cabinets (name, image, user_id)
-Cabinet.create(
-  name: "Jenny's Stuff",
+User.create(
+  cabinet_name: "Jenny's Stuff",
   image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arolsen_Klebeband_09_231_1.jpg/405px-Arolsen_Klebeband_09_231_1.jpg',
   first_name: 'Jenny',
   last_name: 'Ingram',
-  email: 'jenny@gmail.com',
+  email: 'jennyjean8675309@gmail.com',
   username: 'jennyjean',
-  password: 'blahblah'
+  password: 'blahblah',
+  public: true
 )
 
 15.times do
-  Cabinet.create(
-    name: Faker::Hipster.word,
+  User.create(
+    cabinet_name: Faker::Hipster.word,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arolsen_Klebeband_09_231_1.jpg/405px-Arolsen_Klebeband_09_231_1.jpg',
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     username: Faker::Internet.username,
-    password: Faker::Internet.password(8)
+    password: Faker::Internet.password(8),
+    public: true
   )
 end
 
@@ -41,7 +43,7 @@ s = ItemType.create(name: 'Scientifica', description: 'scientific instruments')
 # Item (cabinet_id, item_type_id, name, description, interpretation, location, image_url)
 5.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: a,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -53,7 +55,7 @@ end
 
 5.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: a,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -65,7 +67,7 @@ end
 
 5.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: a,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -77,7 +79,7 @@ end
 
 5.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: a,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -89,7 +91,7 @@ end
 
 5.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: a,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -101,7 +103,7 @@ end
 
 15.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: s,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -113,7 +115,7 @@ end
 
 30.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: n,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -125,7 +127,7 @@ end
 
 20.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: e,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -137,7 +139,7 @@ end
 
 5.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: a,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
@@ -149,7 +151,7 @@ end
 
 10.times do
   Item.create(
-    cabinet_id: Faker::Number.between(1, 15),
+    user_id: Faker::Number.between(1, 15),
     item_type: s,
     name: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
