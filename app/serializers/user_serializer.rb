@@ -1,5 +1,5 @@
 class CabinetSerializer < ActiveModel::Serializer
-  attributes :id, :name, :image, :first_name, :last_name, :email, :username, :password, :items
+  attributes :id, :cabinet_name, :image, :first_name, :last_name, :email, :username, :password, :items, :public
   def items
     self.object.items.map do |item|
       { item_id: item.id,
